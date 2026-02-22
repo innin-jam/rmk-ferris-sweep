@@ -1,0 +1,33 @@
+// https://github.com/HaoboGu/rmk/blob/main/examples/use_rust/nrf52840_ble/src/keymap.rs
+use rmk::config::keyboard_macros::keyboard_macro;
+use rmk::types::action::KeyAction;
+use rmk::{a, k, layer, mo};
+pub(crate) const COL: usize = 10;
+pub(crate) const ROW: usize = 4;
+pub(crate) const NUM_LAYER: usize = 2;
+
+#[rustfmt::skip]
+pub const fn get_default_keymap() -> [[[KeyAction; COL]; ROW]; NUM_LAYER] {
+    [
+        layer!([
+            [k!(Q), k!(W), k!(F), k!(P), k!(B), k!(J), k!(L), k!(U), k!(Y), k!(Quote)],
+            [k!(A), k!(R), k!(S), k!(T), k!(G), k!(M), k!(N), k!(E), k!(I), k!(O)],
+            [k!(Z), k!(X), k!(C), k!(D), k!(V), k!(K), k!(H), k!(Comma), k!(Dot), k!(Slash)],
+            [a!(No), a!(No), a!(No), k!(LCtrl), k!(Space), k!(Shift), k!(Backspace), a!(No), a!(No), a!(No)],
+        ]),
+        layer!([
+            [k!(Q), k!(W), k!(F), k!(P), k!(B), k!(J), k!(L), k!(U), k!(Y), k!(Quote)],
+            [k!(A), k!(R), k!(S), k!(T), k!(G), k!(M), k!(N), k!(E), k!(I), k!(O)],
+            [k!(Z), k!(X), k!(C), k!(D), k!(V), k!(K), k!(H), k!(Comma), k!(Dot), k!(Slash)],
+        ]),
+    ]
+}
+
+// [[layer]]
+// name = "base_layer"
+// keys = """
+// Q W F P B J L U Y '
+// A R S T G M N E I O
+// Z X C D V K H ; : ?
+// lctl spc lsft bsbc
+// """

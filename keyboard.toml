@@ -5,77 +5,64 @@ product_name = "inachron"
 vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "innin"
-serial_number = "vial:f64c2b3c"
+# serial_number = "vial:f64c2b3c"
 chip = "rp2040"
 
-[matrix]
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
+# [matrix]
+# not used for split keyboards
 
 [layout]
 rows = 4
 cols = 10
-layers = 2
-matrix_map = """
-(0, 0, L)  (0, 1, L)  (0, 2, L)  (0, 3, L)  (0, 4, L)    (0, 5, R)  (0, 6, R)  (0, 7, R)  (0, 8, R)  (0, 9, R)
-(1, 0, L)  (1, 1, L)  (1, 2, L)  (1, 3, L)  (1, 4, L)    (1, 5, R)  (1, 6, R)  (1, 7, R)  (1, 8, R)  (1, 9, R)
-(2, 0, L)  (2, 1, L)  (2, 2, L)  (2, 3, L)  (2, 4, L)    (2, 5, R)  (2, 6, R)  (2, 7, R)  (2, 8, R)  (2, 9, R)
-                                 (3, 3, L)  (3, 4, L)    (3, 5, R)  (3, 6, R)
-"""
+layers = 1
 
-[[layer]]
-name = "base_layer"
-keys = """
-Q W F P B J L U Y '
-A R S T G M N E I O
-Z X C D V K H ; : ?
-lctl spc lsft bsbc
-"""
+keymap = [
+    [
+      ["Q", "W", "F", "P", "B", "J", "L", "U", "Y", "'",],
+      ["A", "R", "S", "T", "G", "M", "N", "E", "I", "O",],
+      ["Z", "X", "C", "D", "V", "K", "H", ";", ":", "?",],
+      ["_", "_", "_", "LCtrl", "Space", "LShift", "Backspace", "_", "_", "_",],
+    ],
+]
+# matrix_map = """
+# (0, 0, L)  (0, 1, L)  (0, 2, L)  (0, 3, L)  (0, 4, L)    (0, 5, R)  (0, 6, R)  (0, 7, R)  (0, 8, R)  (0, 9, R)
+# (1, 0, L)  (1, 1, L)  (1, 2, L)  (1, 3, L)  (1, 4, L)    (1, 5, R)  (1, 6, R)  (1, 7, R)  (1, 8, R)  (1, 9, R)
+# (2, 0, L)  (2, 1, L)  (2, 2, L)  (2, 3, L)  (2, 4, L)    (2, 5, R)  (2, 6, R)  (2, 7, R)  (2, 8, R)  (2, 9, R)
+#                                  (3, 3, L)  (3, 4, L)    (3, 5, R)  (3, 6, R)
+# """
 
+# [[layer]]
+# name = "base_layer"
+# keys = """
+# Q W F P B J L U Y '
+# A R S T G M N E I O
+# Z X C D V K H ; : ?
+# lctl spc lsft bsbc
+# """
 
-# keymap = [
-#   [
-#     [
-#       "A",
-#       "B",
-#       "C",
-#     ],
-#     [
-#       "Kc1",
-#       "Kc2",
-#       "Kc3",
-#     ],
-#     [
-#       "LCtrl",
-#       "MO(1)",
-#       "LShift",
-#     ],
-#     [
-#       "OSL(1)",
-#       "LT(2, Kc9)",
-#       "LM(1, LShift | LGui)",
-#     ],
-#   ],
-#   [
-#     [
-#       "_",
-#       "TT(1)",
-#       "TG(2)",
-#     ],
-#     [
-#       "_",
-#       "_",
-#       "_",
-#     ],
-#     [
-#       "_",
-#       "_",
-#       "_",
-#     ],
-#     [
-#       "_",
-#       "_",
-#       "_",
-#     ],
-#   ],
-# ]
+[split]
+connection = "serial"
+
+[split.central]
+rows = 4
+cols = 5
+row_offset = 0
+col_offset = 0
+serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
+[split.central.matrix]
+matrix_type = "direct_pin"
+direct_pins = [
+  []
+]
+
+[[split.peripheral]]
+rows = 4
+cols = 5
+row_offset = 0
+col_offset = 5
+serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
+[split.peripheral.matrix]
+matrix_type = "direct_pin"
+direct_pins = [
+  []
+]
