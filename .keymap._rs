@@ -22,12 +22,3 @@ pub const fn get_default_keymap() -> [[[KeyAction; COL]; ROW]; NUM_LAYER] {
         ]),
     ]
 }
-
-// [[layer]]
-// name = "base_layer"
-// keys = """
-// Q W F P B J L U Y '
-// A R S T G M N E I O
-// Z X C D V K H ; : ?
-// lctl spc lsft bsbc
-// """
