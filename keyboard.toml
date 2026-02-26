@@ -14,15 +14,37 @@ chip = "rp2040"
 [layout]
 rows = 4
 cols = 10
-layers = 1
+layers = 3
 
 keymap = [
     [
       ["Q", "W", "F", "P", "B", "J", "L", "U", "Y", "'",],
       ["A", "R", "S", "T", "G", "M", "N", "E", "I", "O",],
       ["Z", "X", "C", "D", "V", "K", "H", ",", ".", "/",],
-      ["_", "_", "_", "LCtrl", "Space", "LShift", "Backspace", "_", "_", "_",],
+      ["_", "_", "_", "LCtrl", "Space", "LShift", "MO(1)", "_", "_", "_",],
     ],
+    [ # Entrance
+      ["WM(Tab, LShift)", "No", "No", "!WM_NAV", "No", "No", "!FN", "No", "Del", "No",],
+      ["Tab", "Esc", "!SYMBOL2", "MO(2)", "No", "No", "!NUMBER", "!SYMBOL", "Bspc", "Retn",],
+      ["LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui",],
+      ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",],
+    ],
+    [ # Nav Layer (Done!)
+      ["_", "_", "_", "_", "_", "Home", "PageUp", "PageDown", "End", "No",],
+      ["_", "_", "_", "_", "_", "Left", "Down", "Up", "Right", "No",],
+      ["_", "_", "_", "_", "_", "No", "No", "No", "No", "No",],
+      ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",],
+    ],
+]
+
+[behavior.fork]
+forks = [
+  # Shift + `.` output `:` key
+  { trigger = "Dot", negative_output = "Dot", positive_output = "WM(Semicolon, LShift)", match_any = "LShift|RShift" },
+  # Shift + `,` output `;` key
+  { trigger = "Comma", negative_output = ",", positive_output = "Semicolon", match_any = "LShift|RShift" },
+  # Shift + `'` output `"` key
+  { trigger = "Quote", negative_output = "Quote", positive_output = "WM(Kc2, LShift)", match_any = "LShift|RShift" },
 ]
 
 [split]
