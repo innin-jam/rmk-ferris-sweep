@@ -25,7 +25,7 @@ keymap = [
   ],
   [ # (1) Entrance
     [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Del", "No", ],
-    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Retn", ],
+    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Enter", ],
     [ "LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
