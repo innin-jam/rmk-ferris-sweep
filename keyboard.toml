@@ -80,35 +80,29 @@ forks = [
 [[behavior.macro.macros]]
 operations = [ # ß
   { operation = "down", keycode = "RAlt" },
-  { operation = "tap", keycode = "s" },
+  { operation = "text", keycode = "s" },
   { operation = "up", keycode = "RAlt" },
 ]
 [[behavior.macro.macros]]
 operations = [ # ä
   { operation = "down", keycode = "RAlt" },
-  { operation = "down", keycode = "LeftBracket" },
-  { operation = "up", keycode = "LeftBracket" },
-  { operation = "delay", duration = "0ms" },
-  { operation = "tap", keycode = "A" },
+  { operation = "text", text = "LeftBracket" },
   { operation = "up", keycode = "RAlt" },
+  { operation = "tap", keycode = "A" },
 ]
 [[behavior.macro.macros]]
 operations = [ # ö
   { operation = "down", keycode = "RAlt" },
-  { operation = "down", keycode = "LeftBracket" },
-  { operation = "up", keycode = "LeftBracket" },
-  { operation = "delay", duration = "0ms" },
-  { operation = "tap", keycode = "O" },
+  { operation = "text", text = "LeftBracket" },
   { operation = "up", keycode = "RAlt" },
+  { operation = "tap", keycode = "O" },
 ]
 [[behavior.macro.macros]]
 operations = [ # ü
   { operation = "down", keycode = "RAlt" },
-  { operation = "down", keycode = "LeftBracket" },
-  { operation = "up", keycode = "LeftBracket" },
-  { operation = "delay", duration = "0ms" },
-  { operation = "tap", keycode = "U" },
+  { operation = "text", text = "LeftBracket" },
   { operation = "up", keycode = "RAlt" },
+  { operation = "tap", keycode = "U" },
 ]
 
 [split]
