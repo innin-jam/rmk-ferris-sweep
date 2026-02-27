@@ -62,7 +62,7 @@ keymap = [
   [ # (7) Gui (Done!)
     [ "_", "_", "_", "_", "_", "WM(Kc0, LGui)", "WM(Kc1, LGui)", "WM(Kc2, LGui)", "WM(Kc3, LGui)", "WM(Kc4, LGui)", ],
     [ "_", "_", "_", "_", "_", "WM(Left, LGui)", "WM(Down, LGui)", "WM(Up, LGui)", "WM(Right, LGui)", "WM(Enter, LGui)", ],
-    [ "_", "_", "_", "_", "_", "_", "WM(Kc6, LGui)", "WM(F, LGui)", "WM(Q, LGui)", "WM(Slash, LGui)", ],
+    [ "_", "_", "_", "_", "_", "_", "WM(Kc5, LGui)", "WM(F, LGui)", "WM(Q, LGui)", "WM(Slash, LGui)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ]
 ]
