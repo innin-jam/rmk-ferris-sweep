@@ -80,7 +80,7 @@ forks = [
 [[behavior.macro.macros]]
 operations = [ # ß
   { operation = "down", keycode = "RAlt" },
-  { operation = "tap", text = "s" },
+  { operation = "tap", keycode = "s" },
   { operation = "up", keycode = "RAlt" },
 ]
 [[behavior.macro.macros]]
@@ -89,7 +89,7 @@ operations = [ # ä
   { operation = "down", keycode = "LeftBracket" },
   { operation = "up", keycode = "LeftBracket" },
   { operation = "delay", duration = "0ms" },
-  { operation = "tap", text = "A" },
+  { operation = "tap", keycode = "A" },
   { operation = "up", keycode = "RAlt" },
 ]
 [[behavior.macro.macros]]
@@ -98,7 +98,7 @@ operations = [ # ö
   { operation = "down", keycode = "LeftBracket" },
   { operation = "up", keycode = "LeftBracket" },
   { operation = "delay", duration = "0ms" },
-  { operation = "tap", text = "O" },
+  { operation = "tap", keycode = "O" },
   { operation = "up", keycode = "RAlt" },
 ]
 [[behavior.macro.macros]]
@@ -107,7 +107,7 @@ operations = [ # ü
   { operation = "down", keycode = "LeftBracket" },
   { operation = "up", keycode = "LeftBracket" },
   { operation = "delay", duration = "0ms" },
-  { operation = "tap", text = "U" },
+  { operation = "tap", keycode = "U" },
   { operation = "up", keycode = "RAlt" },
 ]
 
