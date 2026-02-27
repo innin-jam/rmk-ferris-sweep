@@ -17,24 +17,54 @@ cols = 10
 layers = 3
 
 keymap = [
-    [
-      ["Q", "W", "F", "P", "B", "J", "L", "U", "Y", "'",],
-      ["A", "R", "S", "T", "G", "M", "N", "E", "I", "O",],
-      ["Z", "X", "C", "D", "V", "K", "H", ",", ".", "/",],
-      ["_", "_", "_", "LCtrl", "Space", "LShift", "MO(1)", "_", "_", "_",],
-    ],
-    [ # Entrance
-      ["WM(Tab, LShift)", "No", "No", "!WM_NAV", "No", "No", "!FN", "No", "Del", "No",],
-      ["Tab", "Esc", "!SYMBOL2", "MO(2)", "No", "No", "!NUMBER", "!SYMBOL", "Bspc", "Retn",],
-      ["LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui",],
-      ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",],
-    ],
-    [ # Nav Layer (Done!)
-      ["_", "_", "_", "_", "_", "Home", "PageUp", "PageDown", "End", "No",],
-      ["_", "_", "_", "_", "_", "Left", "Down", "Up", "Right", "No",],
-      ["_", "_", "_", "_", "_", "No", "No", "No", "No", "No",],
-      ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",],
-    ],
+  [ # (0) Alpha (Done!)
+    [ "Q", "W", "F", "P", "B", "J", "L", "U", "Y", "'", ],
+    [ "A", "R", "S", "T", "G", "M", "N", "E", "I", "O", ],
+    [ "Z", "X", "C", "D", "V", "K", "H", ",", ".", "/", ],
+    [ "_", "_", "_", "LCtrl", "Space", "LShift", "MO(1)", "_", "_", "_", ],
+  ],
+  [ # (1) Entrance
+    [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Del", "No", ],
+    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Retn", ],
+    [ "LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (2) Navigation (Done!)
+    [ "_", "_", "_", "_", "_", "Home", "PageUp", "PageDown", "End", "No", ],
+    [ "_", "_", "_", "_", "_", "Left", "Down", "Up", "Right", "No", ],
+    [ "_", "_", "_", "_", "_", "No", "No", "No", "No", "No", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (3) Number (Done!)
+    [ "_", "7", "8", "9", "_", "_", "_", "_", "_", "_", ],
+    [ "0", "1", "2", "3", "_", "_", "_", "_", "_", "_", ],
+    [ "_", "4", "5", "6", "_", "_", "_", "_", "_", "_", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (4) Symbol (Done!)
+    [ "`", "WM(Comma, LShift)", "[", "]", "WM(Dot, LShift)", "_", "_", "_", "_", "_", ],
+    [ "WM(Backslash, LShift)", "WM(Minus, LShift)", "WM(Kc9, LShift)", "WM(Kc0, LShift)", "WM(Kc7, LShift)", "_", "_", "_", "_", "_", ],
+    [ "NonusHash", "WM(Quote, LShift)", "WM(LeftBracket, LShift)", "WM(RightBracket, LShift)", "WM(NonusHash, LShift)", "_", "_", "_", "_", "_", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (5) Symbol2
+    [ "_", "_", "_", "_", "_", "WM(Kc6, LShift)", "WM(Kc5, LShift)", "WM(Kc8, LShift)", "WM(Kc4, LShift)", "WM(Kc4, RAlt)", ],
+    [ "_", "_", "_", "_", "WM(Kc3, LShift)", "WM(Equal, LShift)", "-", "=", "_", "Backslash", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ], # TODO ßäöü
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (6) Fn (Done!)
+    [ "f1", "f2", "f3", "f4", "_", "_", "_", "_", "_", "_", ],
+    [ "f5", "f6", "f7", "f8", "_", "_", "_", "_", "_", "_", ],
+    [ "f9", "f10", "f11", "f12", "_", "_", "_", "_", "_", "_", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (7) Gui (Done!)
+    [ "_", "_", "_", "_", "_", "WM(Kc0, LGui)", "WM(Kc1, LGui)", "WM(Kc2, LGui)", "WM(Kc3, LGui)", "WM(Kc4, LGui)", ],
+    [ "_", "_", "_", "_", "_", "WM(Left, LGui)", "WM(Down, LGui)", "WM(Up, LGui)", "WM(Right, LGui)", "WM(Enter, LGui)", ],
+    [ "_", "_", "_", "_", "_", "_", "WM(Kc6, LGui)", "WM(F, LGui)", "WM(Q, LGui)", "WM(Slash, LGui)", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ]
 ]
 
 [behavior.fork]
@@ -59,13 +89,11 @@ serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
 [split.central.matrix]
 matrix_type = "direct_pin"
 direct_pins = [
-  ["PIN_7",  "PIN_26", "PIN_27", "PIN_28", "PIN_29", ],
-  ["PIN_22", "PIN_20", "PIN_23", "PIN_21", "PIN_0",  ],
-  ["PIN_2",  "PIN_3",  "PIN_4",  "PIN_5",  "PIN_6",  ],
-  ["_",      "_",      "_",      "PIN_8",  "PIN_9",  ],
+  [ "PIN_7", "PIN_26", "PIN_27", "PIN_28", "PIN_29", ],
+  [ "PIN_22", "PIN_20", "PIN_23", "PIN_21", "PIN_0", ],
+  [ "PIN_2", "PIN_3", "PIN_4", "PIN_5", "PIN_6", ],
+  [ "_", "_", "_", "PIN_8", "PIN_9", ],
 ]
-
-
 
 [[split.peripheral]]
 rows = 4
@@ -76,8 +104,8 @@ serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
 [split.peripheral.matrix]
 matrix_type = "direct_pin"
 direct_pins = [
-  ["PIN_29", "PIN_28", "PIN_27", "PIN_26", "PIN_7", ],
-  ["PIN_0", "PIN_21", "PIN_23", "PIN_20", "PIN_22", ],
-  ["PIN_6", "PIN_5", "PIN_4", "PIN_3", "PIN_2", ],
-  ["PIN_9", "PIN_8", "_", "_", "_", ],
+  [ "PIN_29", "PIN_28", "PIN_27", "PIN_26", "PIN_7", ],
+  [ "PIN_0", "PIN_21", "PIN_23", "PIN_20", "PIN_22", ],
+  [ "PIN_6", "PIN_5", "PIN_4", "PIN_3", "PIN_2", ],
+  [ "PIN_9", "PIN_8", "_", "_", "_", ],
 ]
