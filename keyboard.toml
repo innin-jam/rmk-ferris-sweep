@@ -50,7 +50,7 @@ keymap = [
   [ # (5) Symbol2 (Done)
     [ "_", "_", "_", "_", "_", "WM(Kc6, LShift)", "WM(Kc5, LShift)", "WM(Kc8, LShift)", "WM(Kc4, LShift)", "WM(Kc4, RAlt)", ],
     [ "_", "_", "_", "_", "_", "WM(Kc3, LShift)", "WM(Equal, LShift)", "-", "=", "NonusHash", ],
-    [ "_", "_", "_", "_", "_", "Macro(0)", "Macro(1)", "Macro(2)", "Macro(3)", "WM(Kc1, LShift)", ],
+    [ "_", "_", "_", "_", "_", "WM(s, RAlt)", "WM(a, RAlt)", "WM(o, RAlt)", "WM(u, RAlt)", "WM(Kc1, LShift)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
   [ # (6) Fn (Done!)
@@ -75,34 +75,6 @@ forks = [
   { trigger = "Comma", negative_output = ",", positive_output = "Semicolon", match_any = "LShift|RShift" },
   # Shift + `'` output `"` key
   { trigger = "Quote", negative_output = "Quote", positive_output = "WM(Kc2, LShift)", match_any = "LShift|RShift" },
-]
-
-[[behavior.macro.macros]]
-operations = [ # ß
-  { operation = "down", keycode = "RAlt" },
-  { operation = "text", text = "s" },
-  { operation = "up", keycode = "RAlt" },
-]
-[[behavior.macro.macros]]
-operations = [ # ä
-  { operation = "down", keycode = "RAlt" },
-  { operation = "text", text = "LeftBracket" },
-  { operation = "up", keycode = "RAlt" },
-  { operation = "tap", keycode = "A" },
-]
-[[behavior.macro.macros]]
-operations = [ # ö
-  { operation = "down", keycode = "RAlt" },
-  { operation = "text", text = "LeftBracket" },
-  { operation = "up", keycode = "RAlt" },
-  { operation = "tap", keycode = "O" },
-]
-[[behavior.macro.macros]]
-operations = [ # ü
-  { operation = "down", keycode = "RAlt" },
-  { operation = "text", text = "LeftBracket" },
-  { operation = "up", keycode = "RAlt" },
-  { operation = "tap", keycode = "U" },
 ]
 
 [split]
