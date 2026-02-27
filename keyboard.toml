@@ -109,3 +109,8 @@ direct_pins = [
   [ "PIN_6", "PIN_5", "PIN_4", "PIN_3", "PIN_2", ],
   [ "PIN_9", "PIN_8", "_", "_", "_", ],
 ]
+
+
+[host]
+vial_enabled = true
+unlock_keys = [[0, 0], [0, 1]]
