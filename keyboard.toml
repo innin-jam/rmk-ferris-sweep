@@ -80,7 +80,7 @@ forks = [
 [[behavior.macro.macros]]
 operations = [ # ß
   { operation = "down", keycode = "RAlt" },
-  { operation = "text", keycode = "s" },
+  { operation = "text", text = "s" },
   { operation = "up", keycode = "RAlt" },
 ]
 [[behavior.macro.macros]]
