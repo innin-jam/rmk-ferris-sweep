@@ -62,9 +62,15 @@ keymap = [
   [ # (7) Gui (Done!)
     [ "_", "_", "_", "_", "_", "WM(Kc0, LGui)", "WM(Kc1, LGui)", "WM(Kc2, LGui)", "WM(Kc3, LGui)", "WM(Kc4, LGui)", ],
     [ "_", "_", "_", "_", "_", "WM(Left, LGui)", "WM(Down, LGui)", "WM(Up, LGui)", "WM(Right, LGui)", "WM(Enter, LGui)", ],
-    [ "_", "_", "_", "_", "_", "_", "WM(Kc5, LGui)", "WM(S, LGui)", "WM(R, LGui)", "WM(Slash, LGui)", ],
+    [ "_", "_", "_", "_", "_", "_", "WM(S, LGui)", "WM(R, LGui)", "WM(R, LGui)", "WM(Slash, LGui)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
-  ]
+  ],
+  [ # (8) Entrance Copy (TODO link other layers here)
+    [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Del", "No", ],
+    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Enter", ],
+    [ "LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
 ]
 
 [behavior.fork]
@@ -114,3 +120,6 @@ direct_pins = [
 [host]
 vial_enabled = true
 unlock_keys = [[0, 0], [0, 1]]
+
+[rmk]
+debounce_time = 30
