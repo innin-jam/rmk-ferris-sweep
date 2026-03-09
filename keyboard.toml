@@ -65,12 +65,6 @@ keymap = [
     [ "_", "_", "_", "_", "_", "_", "WM(S, LGui)", "WM(R, LGui)", "WM(R, LGui)", "WM(Slash, LGui)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
-  [ # (8) Entrance Copy (TODO link other layers here)
-    [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Del", "No", ],
-    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Enter", ],
-    [ "LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui", ],
-    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
-  ],
 ]
 
 [behavior.fork]
