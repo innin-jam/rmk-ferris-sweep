@@ -24,8 +24,8 @@ keymap = [
     [ "_", "_", "_", "LCtrl", "Space", "LShift", "MO(1)", "_", "_", "_", ],
   ],
   [ # (1) Entrance
-    [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Del", "No", ],
-    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Enter", ],
+    [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Delete", "No", ],
+    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Backspace", "Enter", ],
     [ "LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
@@ -50,7 +50,7 @@ keymap = [
   [ # (5) Symbol2 (Done)
     [ "_", "_", "_", "_", "_", "WM(Kc6, LShift)", "WM(Kc5, LShift)", "WM(Kc8, LShift)", "WM(Kc4, LShift)", "WM(Kc4, RAlt)", ],
     [ "_", "_", "_", "_", "_", "WM(Kc3, LShift)", "WM(Equal, LShift)", "-", "=", "NonusHash", ],
-    [ "_", "_", "_", "_", "_", "WM(s, RAlt)", "WM(a, RAlt)", "WM(o, RAlt)", "WM(u, RAlt)", "WM(Kc1, LShift)", ],
+    [ "_", "_", "_", "_", "_", "WM(S, RAlt)", "WM(A, RAlt)", "WM(O, RAlt)", "WM(U, RAlt)", "WM(Kc1, LShift)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
   [ # (6) Fn (Done!)
@@ -76,9 +76,6 @@ forks = [
   # Shift + `'` output `"` key
   { trigger = "Quote", negative_output = "Quote", positive_output = "WM(Kc2, LShift)", match_any = "LShift|RShift" },
 ]
-
-[behavior]
-tap_hold = { enable_hrm = true, permissive_hold = true, chordal_hold = true, hold_on_other_press = true, prior_idle_time = "120ms", hold_timeout = "250ms" }
 
 [split]
 connection = "serial"
