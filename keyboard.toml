@@ -1,9 +1,11 @@
+# Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "Ferris sweep"
-product_name = "Ferris sweep"
-vendor_id = 0xc2ab
-product_id = 0x3939
-manufacturer = "DPB"
+name = "inachron"
+product_name = "inachron"
+vendor_id = 0x4c4b
+product_id = 0x4643
+manufacturer = "innin"
+# serial_number = "vial:f64c2b3c"
 chip = "rp2040"
 
 # [matrix]
@@ -12,30 +14,31 @@ chip = "rp2040"
 [layout]
 rows = 4
 cols = 10
-layers = 9
+layers = 8
+
 keymap = [
   [ # (0) Alpha (Done!)
-    [ "Q", "W", "F", "TD(7)", "B", "J", "TD(6)", "U", "Y", "'", ],
-    [ "A", "R", "TD(5)", "TD(3)", "G", "M", "TD(2)", "TD(4)", "I", "O", ],
-    [ "TD(0)", "TD(1)", "C", "D", "V", "K", "H", "Comma", "TD(9)", "TD(8)", ],
+    [ "Q", "W", "F", "P", "B", "J", "L", "U", "Y", "'", ],
+    [ "A", "R", "S", "T", "G", "M", "N", "E", "I", "O", ],
+    [ "Z", "X", "C", "D", "V", "K", "H", ",", ".", "/", ],
     [ "_", "_", "_", "LCtrl", "Space", "LShift", "MO(1)", "_", "_", "_", ],
   ],
   [ # (1) Entrance
-    [ "WM(Tab, LShift)", "No", "No", "No", "No", "No", "No", "No", "Delete", "No", ],
-    [ "Tab", "Esc", "No", "No", "No", "No", "No", "No", "Backspace", "Enter", ],
-    [ "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", ],
-    [ "_", "_", "_", "_", "TO(8)", "_", "_", "_", "_", "_", ],
-  ],
-  [ # (2) Number (Done!)
-    [ "_", "7", "8", "9", "_", "_", "_", "_", "_", "_", ],
-    [ "0", "1", "2", "3", "_", "_", "_", "_", "_", "_", ],
-    [ "_", "4", "5", "6", "_", "_", "_", "_", "_", "_", ],
+    [ "WM(Tab, LShift)", "No", "No", "MO(7)", "No", "No", "MO(6)", "No", "Del", "No", ],
+    [ "Tab", "Esc", "MO(5)", "MO(2)", "No", "No", "MO(3)", "MO(4)", "Bspc", "Enter", ],
+    [ "LGui", "LAlt", "No", "No", "No", "No", "No", "No", "LAlt", "LGui", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
-  [ # (3) Navigation (Done!)
+  [ # (2) Navigation (Done!)
     [ "_", "_", "_", "_", "_", "Home", "PageDown", "PageUp", "End", "No", ],
     [ "_", "_", "_", "_", "_", "Left", "Down", "Up", "Right", "No", ],
     [ "_", "_", "_", "_", "_", "No", "No", "No", "No", "No", ],
+    [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
+  ],
+  [ # (3) Number (Done!)
+    [ "_", "7", "8", "9", "_", "_", "_", "_", "_", "_", ],
+    [ "0", "1", "2", "3", "_", "_", "_", "_", "_", "_", ],
+    [ "_", "4", "5", "6", "_", "_", "_", "_", "_", "_", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
   [ # (4) Symbol (Done!)
@@ -47,7 +50,7 @@ keymap = [
   [ # (5) Symbol2 (Done)
     [ "_", "_", "_", "_", "_", "WM(Kc6, LShift)", "WM(Kc5, LShift)", "WM(Kc8, LShift)", "WM(Kc4, LShift)", "WM(Kc4, RAlt)", ],
     [ "_", "_", "_", "_", "_", "WM(Kc3, LShift)", "WM(Equal, LShift)", "-", "=", "NonusHash", ],
-    [ "_", "_", "_", "_", "_", "WM(S, RAlt)", "WM(A, RAlt)", "WM(O, RAlt)", "WM(U, RAlt)", "WM(Kc1, LShift)", ],
+    [ "_", "_", "_", "_", "_", "WM(s, RAlt)", "WM(a, RAlt)", "WM(o, RAlt)", "WM(u, RAlt)", "WM(Kc1, LShift)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
   [ # (6) Fn (Done!)
@@ -62,16 +65,7 @@ keymap = [
     [ "_", "_", "_", "_", "_", "WM(S, LGui)", "WM(R, LGui)", "WM(F, LGui)", "WM(Q, LGui)",  "WM(Slash, LGui)", ],
     [ "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", ],
   ],
-  [ # (8) Frozen alpha
-    [ "Q", "W", "F", "P", "B", "J", "L", "U", "Y", "'", ],
-    [ "A", "R", "S", "T", "G", "M", "N", "E", "I", "O", ],
-    [ "Z", "X", "C", "D", "V", "K", "H", ",", ".", "/", ],
-    [ "_", "_", "_", "LCtrl", "_", "LShift", "TO(0)", "_", "_", "_", ],
-  ],
 ]
-
-# [storage]
-# enabled=false
 
 [behavior.fork]
 forks = [
@@ -83,32 +77,12 @@ forks = [
   { trigger = "Quote", negative_output = "Quote", positive_output = "WM(Kc2, LShift)", match_any = "LShift|RShift" },
 ]
 
-
-[behavior.tap_dance]
-tap_dances = [
-  { tap = "Z", hold = "LGui" },
-  { tap = "X", hold = "LAlt" },
-  { tap = "N", hold = "MO(2)" },
-  { tap = "T", hold = "MO(3)" },
-  { tap = "E", hold = "MO(4)" },
-  { tap = "S", hold = "MO(5)" },
-  { tap = "L", hold = "MO(6)" },
-  { tap = "P", hold = "MO(7)" },
-  { tap = "/", hold = "LGui" },
-  { tap = ".", hold = "LAlt" },
-]
-
-    # [ "Q", "W", "F", "LT(7, P)", "B", "J", "LT(6, L)", "U", "Y", "'", ],
-    # [ "A", "R", "LT(5, S)", "LT(2, T)", "G", "M", "LT(3, N)", "LT(4, E)", "I", "O", ],
-    # [ "MT(Z, LGui)", "MT(X, LAlt)", "C", "D", "V", "K", "H", "Comma", "Dot", "MT(Slash, LGui)", ],
-
-[rmk]
-debounce_time=50
+[behavior.hold]
+tap_hold = { enable_hrm = true, permissive_hold = true, chordal_hold = true, hold_on_other_press = true, prior_idle_time = "120ms", hold_timeout = "250ms" }
 
 [split]
 connection = "serial"
 
-# we are defining the left side to be our primary.
 [split.central]
 rows = 4
 cols = 5
@@ -117,11 +91,11 @@ col_offset = 0
 serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
 [split.central.matrix]
 matrix_type = "direct_pin"
-direct_pins=[
-    ["PIN_7", "PIN_26", "PIN_27", "PIN_28", "PIN_29", ],
-    ["PIN_22", "PIN_20", "PIN_23", "PIN_21", "PIN_0", ],
-    ["PIN_2", "PIN_3", "PIN_4", "PIN_5", "PIN_6", ],
-    ["_", "_", "_", "PIN_8", "PIN_9", ],
+direct_pins = [
+  [ "PIN_7", "PIN_26", "PIN_27", "PIN_28", "PIN_29", ],
+  [ "PIN_22", "PIN_20", "PIN_23", "PIN_21", "PIN_0", ],
+  [ "PIN_2", "PIN_3", "PIN_4", "PIN_5", "PIN_6", ],
+  [ "_", "_", "_", "PIN_8", "PIN_9", ],
 ]
 
 [[split.peripheral]]
@@ -132,9 +106,17 @@ col_offset = 5
 serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
 [split.peripheral.matrix]
 matrix_type = "direct_pin"
-direct_pins=[
-    ["PIN_29", "PIN_28", "PIN_27", "PIN_26", "PIN_7", ],
-    ["PIN_0", "PIN_21", "PIN_23", "PIN_20", "PIN_22", ],
-    ["PIN_6", "PIN_5", "PIN_4", "PIN_3", "PIN_2", ],
-    ["PIN_9", "PIN_8", "_", "_", "_", ],
+direct_pins = [
+  [ "PIN_29", "PIN_28", "PIN_27", "PIN_26", "PIN_7", ],
+  [ "PIN_0", "PIN_21", "PIN_23", "PIN_20", "PIN_22", ],
+  [ "PIN_6", "PIN_5", "PIN_4", "PIN_3", "PIN_2", ],
+  [ "PIN_9", "PIN_8", "_", "_", "_", ],
 ]
+
+
+[host]
+vial_enabled = true
+unlock_keys = [[0, 0], [0, 1]]
+
+[rmk]
+debounce_time = 50
