@@ -77,7 +77,7 @@ forks = [
   { trigger = "Quote", negative_output = "Quote", positive_output = "WM(Kc2, LShift)", match_any = "LShift|RShift" },
 ]
 
-[behavior.hold]
+[behavior]
 tap_hold = { enable_hrm = true, permissive_hold = true, chordal_hold = true, hold_on_other_press = true, prior_idle_time = "120ms", hold_timeout = "250ms" }
 
 [split]
